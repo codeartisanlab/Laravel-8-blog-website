@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="@yield('meta_desc')">
     <meta name="author" content="">
 
-    <title>Laravel Blog - Admin</title>
+    <title>@yield('title','Admin Dashboard')</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{asset('backend')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{url('admin/dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -62,8 +62,8 @@
             <span>Post</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="login.html">View All</a>
-            <a class="dropdown-item" href="register.html">Add New</a>
+            <a class="dropdown-item" href="{{url('admin/post')}}">View All</a>
+            <a class="dropdown-item" href="{{url('admin/post/create')}}">Add New</a>
           </div>
         </li>
         <!-- Comments -->
@@ -86,7 +86,7 @@
         </li>
         <!-- Logout -->
         <li class="nav-item">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{url('admin/logout')}}">
             <i class="fas fa-fw fa-sign-out-alt"></i>
             <span>Logout</span>
           </a>

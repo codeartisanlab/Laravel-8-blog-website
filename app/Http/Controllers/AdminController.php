@@ -21,6 +21,8 @@ class AdminController extends Controller
 
     	$userCheck=Admin::where(['username'=>$request->username,'password'=>$request->password])->count();
     	if($userCheck>0){
+            $adminData=Admin::where(['username'=>$request->username,'password'=>$request->password])->get();
+            session(['adminData'=>$adminData]);
     		return redirect('admin/dashboard');
     	}else{
     		return redirect('admin/login')->with('error','Invalid username/password!!');
