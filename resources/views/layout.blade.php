@@ -23,10 +23,15 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('backend')}}/css/sb-admin.css" rel="stylesheet">
 
+    @if(!Session::has('adminData'))
+    <script type="text/javascript">
+      window.location.href="{{url('admin/login')}}";
+    </script>
+    @endif
+
   </head>
 
   <body id="page-top">
-
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
       <a class="navbar-brand mr-1" href="index.html">Laravel Blog</a>
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
@@ -35,7 +40,6 @@
     </nav>
 
     <div id="wrapper">
-
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
