@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,6 @@ Route::resource('admin/category',CategoryController::class);
 // Posts
 Route::get('admin/post/{id}/delete',[PostController::class,'destroy']);
 Route::resource('admin/post',PostController::class);
+// Settings
+Route::get('/admin/setting',[SettingController::class,'index']);
+Route::post('/admin/setting',[SettingController::class,'save_settings']);
