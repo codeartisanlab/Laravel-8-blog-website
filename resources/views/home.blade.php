@@ -37,7 +37,7 @@
 	<main class="container mt-4">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="row"> 
+				<div class="row mb-5"> 
 					@if(count($posts)>0)
 						@foreach($posts as $post)
 						<div class="col-md-4">
@@ -53,6 +53,8 @@
 					<p class="alert alert-danger">No Post Found</p>
 					@endif
 				</div>
+				<!-- Pagination -->
+				{{$posts->links()}}
 			</div>
 			<!-- Right SIdebar -->
 			<div class="col-md-4">
@@ -71,6 +73,7 @@
 				<!-- Recent Posts -->
 				<div class="card mb-4">
 					<h5 class="card-header">Recent Posts</h5>
+					{{dd($recent_posts)}}
 					<div class="list-group list-group-flush">
 						<a href="#" class="list-group-item">Post 1</a>
 						<a href="#" class="list-group-item">Post 2</a>
