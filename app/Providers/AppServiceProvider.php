@@ -25,8 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        // Share Model Data
-        View::share('recent_posts',\App\Models\Post::take(1)->get());
-
+        View::share('recent_posts',\App\Models\Post::orderBy('id','desc')->limit('5')->get());
     }
 }
