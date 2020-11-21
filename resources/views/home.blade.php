@@ -62,12 +62,14 @@
 				<div class="card mb-4">
 					<h5 class="card-header">Search</h5>
 					<div class="card-body">
-						<div class="input-group">
-						  <input type="text" class="form-control" />
-						  <div class="input-group-append">
-						    <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
-						  </div>
-						</div>
+						<form action="{{url('/')}}">
+							<div class="input-group">
+							  <input type="text" name="q" class="form-control" />
+							  <div class="input-group-append">
+							    <button class="btn btn-dark" type="button" id="button-addon2">Search</button>
+							  </div>
+							</div>
+						</form>
 					</div>
 				</div>
 				<!-- Recent Posts -->
