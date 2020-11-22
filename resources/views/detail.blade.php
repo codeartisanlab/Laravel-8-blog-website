@@ -18,6 +18,21 @@
 						<input type="submit" class="btn btn-dark mt-2" />
 					</div>
 				</div>
+				<!-- Fetch Comments -->
+				<div class="card my-4">
+					<h5 class="card-header">Comments <span class="badge badge-dark">{{count($detail->comments)}}</span></h5>
+					<div class="card-body">
+						@if($detail->comments)
+							@foreach($detail->comments as $comment)
+								<blockquote class="blockquote">
+								  <p class="mb-0">{{$comment->comment}}</p>
+								  <footer class="blockquote-footer">Username</footer>
+								</blockquote>
+								<hr/>
+							@endforeach
+						@endif
+					</div>
+				</div>
 			</div>
 			<!-- Right SIdebar -->
 			<div class="col-md-4">
