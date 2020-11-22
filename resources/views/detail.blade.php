@@ -1,26 +1,23 @@
 @extends('frontlayout')
-@section('title','Home Page')
+@section('title',$detail->title)
 @section('content')
 		<div class="row">
 			<div class="col-md-8">
-				<div class="row mb-5"> 
-					@if(count($posts)>0)
-						@foreach($posts as $post)
-						<div class="col-md-4">
-							<div class="card">
-							  <a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}"><img src="{{asset('imgs/thumb/'.$post->thumb)}}" class="card-img-top" alt="{{$post->title}}" /></a>
-							  <div class="card-body">
-							    <h5 class="card-title"><a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}">{{$post->title}}</a></h5>
-							  </div>
-							</div>
-						</div>
-						@endforeach
-					@else
-					<p class="alert alert-danger">No Post Found</p>
-					@endif
+				<div class="card">
+					<h5 class="card-header">{{$detail->title}}</h5>
+					<img src="{{asset('imgs/full/'.$detail->full_img)}}" class="card-img-top" alt="{{$detail->title}}">
+					<div class="card-body">
+						{{$detail->detail}}
+					</div>
 				</div>
-				<!-- Pagination -->
-				{{$posts->links()}}
+				<!-- Add Comment -->
+				<div class="card my-5">
+					<h5 class="card-header">Add Comment</h5>
+					<div class="card-body">
+						<textarea class="form-control"></textarea>
+						<input type="submit" class="btn btn-dark mt-2" />
+					</div>
+				</div>
 			</div>
 			<!-- Right SIdebar -->
 			<div class="col-md-4">

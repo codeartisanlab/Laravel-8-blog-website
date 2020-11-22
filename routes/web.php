@@ -23,7 +23,8 @@ use App\Http\Controllers\SettingController;
 // });
 
 Route::get('/',[HomeController::class,'home']);
-
+Route::get('/detail/{slug}/{id}',[HomeController::class,'detail']);
+// Admin ROutes
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::post('/admin/login',[AdminController::class,'submit_login']);
 Route::get('/admin/logout',[AdminController::class,'logout']);

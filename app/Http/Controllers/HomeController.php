@@ -16,4 +16,9 @@ class HomeController extends Controller
     	}
         return view('home',['posts'=>$posts]);
     }
+    // Post Detail
+    function detail(Request $request,$slug,$postId){
+    	$detail=Post::find($postId);
+    	return view('detail',['detail'=>$detail]);
+    }
 }
