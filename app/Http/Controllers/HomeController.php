@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 class HomeController extends Controller
 {
-    function home(Request $request){
+    function index(Request $request){
     	// $posts=Post::orderBy('id','desc')->simplePaginate(1);
     	if($request->has('q')){
     		$q=$request->q;

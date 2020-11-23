@@ -22,7 +22,7 @@ use App\Http\Controllers\SettingController;
 //     return view('welcome');
 // });
 
-Route::get('/',[HomeController::class,'home']);
+Route::get('/',[HomeController::class,'index']);
 Route::get('/detail/{slug}/{id}',[HomeController::class,'detail']);
 // Admin ROutes
 Route::get('/admin/login',[AdminController::class,'login']);
@@ -38,3 +38,7 @@ Route::resource('admin/post',PostController::class);
 // Settings
 Route::get('/admin/setting',[SettingController::class,'index']);
 Route::post('/admin/setting',[SettingController::class,'save_settings']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -10,6 +10,7 @@
 						{{$detail->detail}}
 					</div>
 				</div>
+				@auth
 				<!-- Add Comment -->
 				<div class="card my-5">
 					<h5 class="card-header">Add Comment</h5>
@@ -18,6 +19,7 @@
 						<input type="submit" class="btn btn-dark mt-2" />
 					</div>
 				</div>
+				@endauth
 				<!-- Fetch Comments -->
 				<div class="card my-4">
 					<h5 class="card-header">Comments <span class="badge badge-dark">{{count($detail->comments)}}</span></h5>
