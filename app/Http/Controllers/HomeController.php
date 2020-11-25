@@ -19,6 +19,8 @@ class HomeController extends Controller
     }
     // Post Detail
     function detail(Request $request,$slug,$postId){
+        // Update post count
+        Post::find($postId)->increment('views');
     	$detail=Post::find($postId);
     	return view('detail',['detail'=>$detail]);
     }
