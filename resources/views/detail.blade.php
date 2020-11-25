@@ -33,7 +33,11 @@
 							@foreach($detail->comments as $comment)
 								<blockquote class="blockquote">
 								  <p class="mb-0">{{$comment->comment}}</p>
-								  <footer class="blockquote-footer">Username</footer>
+								  @if($comment->user_id==0)
+								  <footer class="blockquote-footer">Admin</footer>
+								  @else
+								  <footer class="blockquote-footer">{{$comment->user->name}}</footer>
+								  @endif
 								</blockquote>
 								<hr/>
 							@endforeach
