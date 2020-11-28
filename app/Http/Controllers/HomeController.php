@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 use App\Models\Comment;
 class HomeController extends Controller
 {
@@ -24,6 +25,14 @@ class HomeController extends Controller
     	$detail=Post::find($postId);
     	return view('detail',['detail'=>$detail]);
     }
+
+    // All posts according to the category
+    function category(Request $request,$cat_slug,$cat_id){
+        $category=Category::find($cat_id);
+        $posts=Post::where('cat_id',$cat_id)->orderBy('id','desc')->paginate(1);
+        return view('category',['posts'=>$posts,'category'=>$category]);
+    }
+
     // Save Comment
     function save_comment(Request $request,$slug,$id){
         $request->validate([

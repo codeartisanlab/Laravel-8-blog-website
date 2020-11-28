@@ -16,7 +16,7 @@
 						{{$detail->detail}}
 					</div>
 					<div class="card-footer">
-						In <a href="#">{{$detail->category->title}}</a>
+						In <a href="{{url('category/'.Str::slug($detail->category->title).'/'.$detail->category->id)}}">{{$detail->category->title}}</a>
 					</div>
 				</div>
 				@auth

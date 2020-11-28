@@ -24,6 +24,7 @@ use App\Http\Controllers\SettingController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/detail/{slug}/{id}',[HomeController::class,'detail']);
+Route::get('/category/{slug}/{id}',[HomeController::class,'category']);
 Route::post('/save-comment/{slug}/{id}',[HomeController::class,'save_comment']);
 // Admin ROutes
 Route::get('/admin/login',[AdminController::class,'login']);

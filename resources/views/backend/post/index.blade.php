@@ -23,6 +23,7 @@
           <thead>
             <tr>
               <th>#</th>
+              <th>Category</th>
               <th>Title</th>
               <th>Image</th>
               <th>Full</th>
@@ -32,6 +33,7 @@
           <tfoot>
             <tr>
               <th>#</th>
+              <th>Category</th>
               <th>Title</th>
               <th>Image</th>
               <th>Full</th>
@@ -42,6 +44,7 @@
               @foreach($data as $post)
               <tr>
                 <td>{{$post->id}}</td>
+                <td>{{$post->category->title}}</td>
                 <td>{{$post->title}}</td>
                 <td><img src="{{ asset('imgs/thumb').'/'.$post->thumb }}" width="100" /></td>
                 <td><img src="{{ asset('imgs/full').'/'.$post->full_img }}" width="100" /></td>
