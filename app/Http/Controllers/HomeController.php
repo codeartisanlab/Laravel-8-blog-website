@@ -26,6 +26,12 @@ class HomeController extends Controller
     	return view('detail',['detail'=>$detail]);
     }
 
+    // All Categories
+    function all_category(){
+        $categories=Category::orderBy('id','desc')->paginate(5);
+        return view('categories',['categories'=>$categories]);
+    }
+
     // All posts according to the category
     function category(Request $request,$cat_slug,$cat_id){
         $category=Category::find($cat_id);
