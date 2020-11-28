@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2020 at 06:13 PM
+-- Generation Time: Nov 28, 2020 at 04:15 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -62,8 +62,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `detail`, `image`, `created_at`, `updated_at`) VALUES
-(3, 'Category 1', 'Category 1 Detail', 'na', '2020-11-11 12:23:10', '2020-11-11 12:23:10'),
-(4, 'Category 2', 'This is detail', 'na', '2020-11-13 12:01:06', '2020-11-13 12:01:06');
+(3, 'Category 1', 'Category 1', '1606573037.jpg', '2020-11-11 12:23:10', '2020-11-28 08:47:17'),
+(4, 'Category 2', 'Category 2', '1606573047.jpg', '2020-11-13 12:01:06', '2020-11-28 08:47:27');
 
 -- --------------------------------------------------------
 
@@ -132,7 +132,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2020_11_08_163752_create_admins_table', 5),
 (8, '2020_11_17_164915_create_settings_table', 6),
 (9, '2020_11_25_163331_add_view_to_posts_table', 7),
-(10, '2020_11_25_165136_add_votes_to_posts', 8);
+(10, '2020_11_25_165136_add_votes_to_posts', 8),
+(11, '2020_11_28_144807_add_status_to_posts_table', 9);
 
 -- --------------------------------------------------------
 
@@ -163,16 +164,18 @@ CREATE TABLE `posts` (
   `tags` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `views` int(11) NOT NULL
+  `views` int(11) NOT NULL DEFAULT 0,
+  `status` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `cat_id`, `title`, `thumb`, `full_img`, `detail`, `tags`, `created_at`, `updated_at`, `views`) VALUES
-(3, 0, 4, 'Post Title 3', '1605289756.jpg', '1605289265.jpg', 'Post Title 3 detail', 'tag1, tag2', '2020-11-13 12:11:05', '2020-11-25 11:32:16', 10),
-(4, 0, 4, 'Post Title 2', '1605751577.jpg', '1605751577.jpg', 'Post Title 2 Detail', 'tag1, tag2, tag3', '2020-11-18 20:36:17', '2020-11-25 11:26:19', 8);
+INSERT INTO `posts` (`id`, `user_id`, `cat_id`, `title`, `thumb`, `full_img`, `detail`, `tags`, `created_at`, `updated_at`, `views`, `status`) VALUES
+(3, 0, 4, 'Post Title 3', '1605289756.jpg', '1605289265.jpg', 'Post Title 3 detail', 'tag1, tag2', '2020-11-13 12:11:05', '2020-11-28 08:32:41', 15, 0),
+(4, 0, 4, 'Post Title 2', '1605751577.jpg', '1605751577.jpg', 'Post Title 2 Detail', 'tag1, tag2, tag3', '2020-11-18 20:36:17', '2020-11-28 08:35:45', 11, 0),
+(5, 1, 3, 'Post Title 3', '1606575613.jpg', '1606575613.jpg', 'This is post title 3 detail', 'post title 3, post title 4', '2020-11-28 09:30:13', '2020-11-28 09:31:28', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -315,13 +318,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `settings`
