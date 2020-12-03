@@ -38,6 +38,9 @@
 		        <a class="nav-link" href="{{url('save-post-form')}}">Add Post</a>
 		      </li>
 		      <li class="nav-item">
+		        <a class="nav-link" href="{{url('manage-posts')}}">Manage Posts</a>
+		      </li>
+		      <li class="nav-item">
 		        <a class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{url('logout')}}">Logout</a>
 		      </li>
 		      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
