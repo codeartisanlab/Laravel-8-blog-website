@@ -29,11 +29,17 @@ Route::get('/category/{slug}/{id}',[HomeController::class,'category']);
 Route::post('/save-comment/{slug}/{id}',[HomeController::class,'save_comment']);
 Route::get('save-post-form',[HomeController::class,'save_post_form']);
 Route::post('save-post-form',[HomeController::class,'save_post_data']);
-// Admin ROutes
+// Admin Routes
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::post('/admin/login',[AdminController::class,'submit_login']);
 Route::get('/admin/logout',[AdminController::class,'logout']);
 Route::get('/admin/dashboard',[AdminController::class,'dashboard']);
+// Post
+Route::get('admin/user',[AdminController::class,'users']);
+Route::get('admin/user/delete/{id}',[AdminController::class,'delete_user']);
+// Comment
+Route::get('admin/comment',[AdminController::class,'comments']);
+Route::get('admin/comment/delete/{id}',[AdminController::class,'delete_comment']);
 // Categories
 Route::get('admin/category/{id}/delete',[CategoryController::class,'destroy']);
 Route::resource('admin/category',CategoryController::class);

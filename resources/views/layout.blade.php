@@ -72,21 +72,17 @@
         </li>
         <!-- Comments -->
         <li class="nav-item">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{url('admin/comment')}}">
             <i class="fas fa-fw fa-comments"></i>
             <span>Comments</span>
           </a>
         </li>
         <!-- Users -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('admin/user')}}">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="login.html">View All</a>
-            <a class="dropdown-item" href="register.html">Add New</a>
-          </div>
         </li>
         <!-- Settings -->
         <li class="nav-item">

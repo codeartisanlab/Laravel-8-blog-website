@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2020 at 04:15 PM
+-- Generation Time: Dec 03, 2020 at 07:51 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -85,8 +85,6 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `user_id`, `post_id`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 0, 4, 'This is simple comment', NULL, NULL),
-(2, 0, 4, 'This is another comment', NULL, NULL),
 (3, 2, 4, 'This is third comment', '2020-11-24 21:31:59', '2020-11-24 21:31:59'),
 (4, 1, 4, 'This is fourth comment', '2020-11-24 22:16:25', '2020-11-24 22:16:25');
 
@@ -173,9 +171,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `cat_id`, `title`, `thumb`, `full_img`, `detail`, `tags`, `created_at`, `updated_at`, `views`, `status`) VALUES
-(3, 0, 4, 'Post Title 3', '1605289756.jpg', '1605289265.jpg', 'Post Title 3 detail', 'tag1, tag2', '2020-11-13 12:11:05', '2020-11-28 08:32:41', 15, 0),
+(3, 0, 4, 'Post Title 3', '1605289756.jpg', '1605289265.jpg', 'Post Title 3 detail', 'tag1, tag2', '2020-11-13 12:11:05', '2020-12-02 23:29:36', 16, 0),
 (4, 0, 4, 'Post Title 2', '1605751577.jpg', '1605751577.jpg', 'Post Title 2 Detail', 'tag1, tag2, tag3', '2020-11-18 20:36:17', '2020-11-28 08:35:45', 11, 0),
-(5, 1, 3, 'Post Title 3', '1606575613.jpg', '1606575613.jpg', 'This is post title 3 detail', 'post title 3, post title 4', '2020-11-28 09:30:13', '2020-11-28 09:31:28', 1, 1);
+(5, 1, 3, 'Post Title 3', '1606575613.jpg', '1606575613.jpg', 'This is post title 3 detail', 'post title 3, post title 4', '2020-11-28 09:30:13', '2020-11-30 03:58:21', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -223,8 +221,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'John', 'john@gmail.com', NULL, '$2y$10$bddLTVD41yry.pUP0gfnTO2Ijb8jnWXh0mHOpAT8RvShXHmrGY5TO', NULL, '2020-11-23 12:16:12', '2020-11-23 12:16:12'),
-(2, 'Alex', 'alex@gmail.com', NULL, '$2y$10$xQuQAkPgKb09A3JQ6QNMoOxBP2XPdFwLHrtphui6dSY/I9OnzH.ee', NULL, '2020-11-23 12:33:35', '2020-11-23 12:33:35');
+(1, 'John', 'john@gmail.com', NULL, '$2y$10$bddLTVD41yry.pUP0gfnTO2Ijb8jnWXh0mHOpAT8RvShXHmrGY5TO', NULL, '2020-11-23 12:16:12', '2020-11-23 12:16:12');
 
 --
 -- Indexes for dumped tables
