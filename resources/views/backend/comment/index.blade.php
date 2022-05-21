@@ -41,7 +41,7 @@
               @foreach($data as $comment)
               <tr>
                 <td>{{$comment->id}}</td>
-                <td>@if(!empty($comment->user_id)) {{$comment->user->email}} @endif</td>
+                {{-- <td>@if(!empty($comment->user_id)) {{$comment->user->email}} @endif</td> --}}
                 <td>{{$comment->comment}}</td>
                 <td>
                   <a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" href="{{url('admin/comment/delete/'.$comment->id)}}">Delete</a>

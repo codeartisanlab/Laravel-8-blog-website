@@ -12,9 +12,9 @@ class HomeController extends Controller
     	// $posts=Post::orderBy('id','desc')->simplePaginate(1);
     	if($request->has('q')){
     		$q=$request->q;
-    		$posts=Post::where('title','like','%'.$q.'%')->orderBy('id','desc')->paginate(2);
+    		$posts=Post::where('title','like','%'.$q.'%')->orderBy('id','desc')->paginate(5);
     	}else{
-    		$posts=Post::orderBy('id','desc')->paginate(2);
+    		$posts=Post::orderBy('id','desc')->paginate(5);
     	}
         return view('home',['posts'=>$posts]);
     }
@@ -94,7 +94,7 @@ class HomeController extends Controller
         $post->full_img=$reFullImage;
         $post->detail=$request->detail;
         $post->tags=$request->tags;
-        $post->status=1;
+        $post->status=0;
         $post->save();
 
         return redirect('save-post-form')->with('success','Post has been added');

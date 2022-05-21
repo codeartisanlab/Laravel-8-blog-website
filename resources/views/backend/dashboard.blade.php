@@ -20,7 +20,7 @@
           </div>
           <div class="mr-5">{{\App\Models\Category::count()}} Categories</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="{{url('category')}}">
+        <a class="card-footer text-white clearfix small z-1" href="{{url('admin/category')}}">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>
@@ -36,7 +36,7 @@
           </div>
           <div class="mr-5">{{\App\Models\Post::count()}} Posts</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="{{url('post')}}">
+        <a class="card-footer text-white clearfix small z-1" href="{{url('admin/post')}}">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>
@@ -52,7 +52,7 @@
           </div>
           <div class="mr-5">{{\App\Models\Comment::count()}} Comments</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="{{url('comment')}}">
+        <a class="card-footer text-white clearfix small z-1" href="{{url('admin/comment')}}">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>
@@ -68,7 +68,7 @@
           </div>
           <div class="mr-5">{{\App\Models\User::count()}} Users</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="{{url('user')}}">
+        <a class="card-footer text-white clearfix small z-1" href="{{url('admin/user')}}">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>
@@ -131,4 +131,4 @@
 </div>
 <!-- /.container-fluid -->
 @endsection
-        
+
